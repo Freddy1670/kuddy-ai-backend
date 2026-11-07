@@ -27,12 +27,12 @@ export default function AIChat() {
 
     try {
       // Calls backend server passing latest user query and message history
-      const response = await fetch('http://localhost:5000/api/chat', {
+      const response = await fetch('https://kuddy-ai-backend-2.onrender.com/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
           message: userMsg.text, 
-          history: updatedMessages // Standardized history payload key
+          history: updatedMessages 
         })
       });
       
